@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+
+  <title>Automated Image Captioner</title>
+  <h1>Automated Image Captioner</h1>
+
+</head>
+
+<body>
+  <h2> Please upload image </h2><br><br>
+  <form method = "post" enctype="multipart/form-data" action="predictCaption">
+
+{% csrf_token %}
+<div class = "col-md-4 col-sm-4"><label for ="fname"><Upload Image:</label> </div> <input name="filePath" type="file"><br><br>
+<br>
+
+<input type="submit" value="Submit">
+<img src={{filePathName}} alt='filePathName'>
+<br>
+{{imageName}}
+<br>
+<h3>Predicted Caption is: </h3>
+{{predictedCaption}}
+
+</body>
+
+
+</html>

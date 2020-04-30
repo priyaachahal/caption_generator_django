@@ -1,0 +1,35 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <h2>Upload Image for Captions</h2>
+
+
+    <br>
+
+    <form method="post" enctype="multipart/form-data" action="predictCaption">
+
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"> </div><input name="filePath" type="file"><br><br>
+ <br>
+<input type="submit" value="Submit" >
+<!-- <label for="fname">Upload Image:</label> -->
+
+<style type="text/css">
+<!--
+ .tab { margin-left: 10px; }
+-->
+</style>
+<br><br><br><br><br><br><br><br>
+<p class>
+  <h4>Image Name :</h4>{{imageName}}
+  <h4>Predicted Caption (Greedy Search):</h4>{{predictedCaption}}
+  <h4>Predicted Caption (Beam Search):</h4>{{beamSearch}}
+  <br><br>
+  <img src={{filePathName}} alt='imagename'></p>
+ </div>
+</form>
+<br>
+
+
+{% endblock %}
